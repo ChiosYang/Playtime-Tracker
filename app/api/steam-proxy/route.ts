@@ -3,8 +3,8 @@ import axios from 'axios';
 import { NextResponse } from 'next/server'; // 导入 NextResponse
 
 export async function GET() { // 使用 GET 函数处理 GET 请求
-  const apiKey = '2BAF17E44C14AB98265D59989829BB90';
-  const steamId = '76561198807671981';
+  const apiKey = '########################';
+  const steamId = '#############################';
 
   if (!apiKey) {
     return NextResponse.json({ error: "请设置 STEAM_API_KEY 环境变量" }, { status: 500 }); // 使用 NextResponse.json 返回 JSON 响应
