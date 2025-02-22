@@ -9,7 +9,7 @@ import {
 export async function GET() {
   // 使用 GET 函数处理 GET 请求
   const myNpsso =
-    "A7xyvOh1aiGjd0IjwC6x2jUMPnaiOmzNrOn1FgBUyy71o5tQMjHRuUyMcEFO5yY0";
+    "#################################";
   try {
     const accessCode = await exchangeNpssoForCode(myNpsso);
     const authorization = await exchangeCodeForAccessToken(accessCode);
