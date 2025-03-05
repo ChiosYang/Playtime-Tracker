@@ -14,7 +14,7 @@ export async function GET() {
     const accessCode = await exchangeNpssoForCode(myNpsso);
     const authorization = await exchangeCodeForAccessToken(accessCode);
     const userTitlesResponse = await getUserPlayedGames(authorization, "me", {
-      limit: 100,
+      limit: 3,
       offset: 0,
     });
     return NextResponse.json(userTitlesResponse, { status: 200 }); // 使用 NextResponse.json 返回 JSON 响应
