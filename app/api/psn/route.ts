@@ -7,9 +7,16 @@ import {
 } from "psn-api";
 
 export async function GET() {
-  // 使用 GET 函数处理 GET 请求
-  const myNpsso =
-    "A7xyvOh1aiGjd0IjwC6x2jUMPnaiOmzNrOn1FgBUyy71o5tQMjHRuUyMcEFO5yY0";
+  // 获取环境变量,设置你的PSN_NPSSO_TOKEN
+  const myNpsso = process.env.PSN_NPSSO_TOKEN;
+
+  if (!myNpsso) {
+    return NextResponse.json(
+      { error: "请设置 PSN_NPSSO_TOKEN 环境变量" },
+      { status: 500 }
+    );
+  }
+
   try {
     const accessCode = await exchangeNpssoForCode(myNpsso);
     const authorization = await exchangeCodeForAccessToken(accessCode);
